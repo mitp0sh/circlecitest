@@ -25,7 +25,7 @@ workflows:
       - buildjoba
   wf-release-build:
     jobs:
-      - buildjobb:
+      - j-release-build:
           filters:
             branches:
               ignore: /.*/
