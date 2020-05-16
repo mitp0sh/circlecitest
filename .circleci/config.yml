@@ -9,7 +9,7 @@ jobs:
           name: Build Job A - EntryPoint
           command: |
             echo "AAA was here..."            
-  buildjobb:
+  j-release-build:
     docker:
       - image: circleci/openjdk:11.0.3-jdk-stretch
     steps:
@@ -23,7 +23,7 @@ workflows:
   untagged-build:
     jobs:
       - buildjoba
-  tagged-build:
+  wf-release-build:
     jobs:
       - buildjobb:
           filters:
