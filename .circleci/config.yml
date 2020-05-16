@@ -1,0 +1,32 @@
+version: 2
+jobs:
+  buildjoba:            
+    docker:
+      - image: circleci/openjdk:11.0.3-jdk-stretch
+    steps: 
+      - checkout             
+      - run:
+          name: Build Job A - EntryPoint
+          command: |
+            echo "AAA was here..."            
+  buildjobb:
+    docker:
+      - image: circleci/openjdk:11.0.3-jdk-stretch
+    steps:
+      - run:
+          name: Build Job B - EntryPoint
+          command: |
+            echo "BBB was here..."            
+
+workflows:
+  version: 2
+  untagged-build:
+    jobs:
+      - buildjoba
+  tagged-build:
+    jobs:
+      - buildjobb:
+          filters:
+            tags:
+              only: /^\d+\.\d+\.\d+$/
+              
