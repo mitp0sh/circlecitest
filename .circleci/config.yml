@@ -27,6 +27,7 @@ workflows:
     jobs:
       - buildjobb:
           filters:
+            branches:
+              ignore: /.*/
             tags:
               only: /^\d+\.\d+\.\d+$/
-              
