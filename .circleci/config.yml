@@ -16,7 +16,7 @@ jobs:
       - run:
           name: Build Job B - EntryPoint
           command: |
-            echo "BBB was here..."            
+            echo "BBB was here...."            
 
 workflows:
   version: 2
